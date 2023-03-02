@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_02_132834) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_02_134717) do
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "position"
@@ -19,4 +19,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_132834) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "vacations", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "finish_date"
+    t.integer "employee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_vacations_on_employee_id"
+  end
+
+  add_foreign_key "vacations", "employees"
 end
