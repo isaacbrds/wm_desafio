@@ -1,14 +1,41 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class="mt-5">Employees</h1>
+<h1 class="m-5 d-flex aligns-items-center justify-content-center "><%= t 'activerecord.models.employees' %></h1>
 
-<div id="employees">
-  <% @employees.each do |employee| %>
-    <%= render employee %>
-    <p>
-      <%= link_to "Show this employee", employee %>
-    </p>
-  <% end %>
-</div>
+<table class="table">
+  <thead>
+    <th><%= t 'activerecord.attributes.employee.name' %></th>
+    <th><%= t 'activerecord.attributes.employee.position' %></th>
+    <th><%= t 'activerecord.attributes.employee.admission_date' %></th>
+    <th>Actions</th>
+  </thead>  
+  <tbody>
+    <% @employees.each do |employee| %>
+    <tr>
+      <td>
+        <%= employee.name %>
+      </td>
+      <td>
+        <%= employee.position %>
+      </td>
+      <td>
+        <%= employee.admission_date %>
+      </td>
+      <td > 
+        <%= link_to t('edit'), edit_employee_path(employee), class: 'btn btn-warning' %>
+      </td>
+      <td >
+        <%= link_to t('show'), employee_path(employee), class: 'btn btn-info'  %>
+      </td>
+      <td >
+        <%= link_to t('delete'), employee_path(employee), method: :delete, data: { confirm: 'Você está certo disso ?' }, class: 'btn btn-danger'  %>
+      </td>
+      
+    </tr>
+    <% end %>
+  
+  </tbody>
+</table>
 
-<%= link_to "New employee", new_employee_path %>
+
+<%= link_to t("new employee"), new_employee_path %>

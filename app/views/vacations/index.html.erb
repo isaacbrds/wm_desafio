@@ -1,14 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
-<h1 class="mt-5">Vacations</h1>
-
-<div id="vacations">
-  <% @vacations.each do |vacation| %>
-    <%= render vacation %>
-    <p>
-      <%= link_to "Show this vacation", vacation %>
-    </p>
+<h1 class="m-5 d-flex aligns-items-center justify-content-center"><%= t 'activerecord.models.vacations' %></h1>
+<table class="table">
+  <thead>
+    <th><%= t 'activerecord.attributes.vacation.start_date' %></th>
+    <th><%= t 'activerecord.attributes.vacation.finish_date' %></th>
+    <th><%= t 'activerecord.attributes.vacation.employee' %></th>
+    <th>Actions</th>
+  </thead>  
+  <tbody>
+    <% @vacations.each do |vacation| %>
+    <td>
+      <%= vacation.start_date %>
+    </td>
+    <td>
+      <%= vacation.finish_date %>
+    </td>
+    <td>
+      <%= vacation.employee_name %>
+    </td>
+    <td > 
+      <%= link_to t('edit'), edit_vacation_path(vacation), class: 'btn btn-warning' %>
+    </td>
+    <td >
+      <%= link_to t('show'), vacation_path(vacation), class: 'btn btn-info'  %>
+    </td>
+    <td >
+      <%= link_to t('delete'), vacation_path(vacation), method: :delete, data: { confirm: 'Você está certo disso ?' }, class: 'btn btn-danger'  %>
+    </td>
   <% end %>
-</div>
+  </tbody>
+</table>
 
-<%= link_to "New vacation", new_vacation_path %>
+
+<%= link_to t("new vacation"), new_vacation_path %>
