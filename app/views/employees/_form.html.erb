@@ -12,21 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
   </div>
 
   <div>
-    <%= form.label :position, style: "display: block" %>
-    <%= form.text_field :position %>
+    <%= form.text_field :position, class: "form-control", placeholder: "position" %>
   </div>
 
   <div>
-    <%= form.label :admission_date, style: "display: block" %>
-    <%= form.datetime_field :admission_date %>
+    <%= form.datetime_field :admission_date, class: "form-control", placeholder: "Admission date" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "send", class: "btn btn-primary mt-3" %>
   </div>
 <% end %>
