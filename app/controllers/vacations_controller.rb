@@ -14,21 +14,26 @@ class VacationsController < ApplicationController
   
   def create
     @vacation = Vacation.new(vacation_params)
-    render :new, status: :unprocessable_entity unless @vacation.save
-    
-    redirect_to vacation_url(@vacation), notice: "vacation was successfully created."
+    if @vacation.save
+      redirect_to vacation_url(@vacation), notice: "vacation was successfully created."
+    else
+      render :new, status: :unprocessable_entity 
+    end
   end
 
 
   def update
-    render :edit, status: :unprocessable_entity  unless @vacation.update(vacation_params)
-    
-    redirect_to vacation_url(@vacation), notice: "vacation was successfully updated."     
+    if @vacation.update(vacation_params)
+      redirect_to vacation_url(@vacation), notice: "vacation was successfully updated."     
+    else
+      render :edit, status: :unprocessable_entity  
+    end
   end
 
   def destroy
-    @vacation.destroy
-    redirect_to vacations_url, notice: "vacation was successfully destroyed."
+    if @vacation.destroy
+      redirect_to vacations_url, notice: "vacation was successfully destroyed."
+    end
   end
 
   private

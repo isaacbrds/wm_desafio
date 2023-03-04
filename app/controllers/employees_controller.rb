@@ -14,21 +14,25 @@ class EmployeesController < ApplicationController
   
   def create
     @employee = Employee.new(employee_params)
-    render :new, status: :unprocessable_entity unless @employee.save
-    
-    redirect_to employee_url(@employee), notice: "Employee was successfully created."
+    if @employee.save
+      redirect_to employee_url(@employee), notice: "Employee was successfully created."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
-
   def update
-    render :edit, status: :unprocessable_entity  unless @employee.update(employee_params)
-    
-    redirect_to employee_url(@employee), notice: "Employee was successfully updated."     
+     if @employee.update(employee_params)
+      redirect_to employee_url(@employee), notice: "Employee was successfully updated."     
+     else
+      render :edit, status: :unprocessable_entity 
+     end
   end
 
   def destroy
-    @employee.destroy
-    redirect_to employees_url, notice: "Employee was successfully destroyed."
+    if @employee.destroy
+      redirect_to employees_url, notice: "Employee was successfully destroyed."
+    end
   end
 
   private
