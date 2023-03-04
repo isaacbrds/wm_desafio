@@ -1,12 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="m-5"><%= notice %></p>
 
 <%= render @employee %>
 
 <div class="mt-5">
-  <%= link_to "Edit this employee", edit_employee_path(@employee) %> |
-  <%= link_to "Back to employees", employees_path %> |
-  <%= link_to "Go to employee's vacations", vacation_path(@employee.vacations) %>
+  <%= link_to t("edit this employee"), edit_employee_path(@employee) %> |
+  <%= link_to t("back to employees"), employees_path %> 
+  <% if @employee.vacations.any? %>
+    |
+    <%= link_to t("go to employee's vacations"), vacation_path(@employee.vacations) %>
+  <% end %>
 
-  <%= button_to "Destroy this employee", @employee, method: :delete, class: "mt-3" %>
+  <%= button_to t("destroy this employee"), @employee, method: :delete, class: "mt-3" %>
 </div>
 

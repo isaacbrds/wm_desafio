@@ -5,8 +5,10 @@ class Vacation < ApplicationRecord
   validate :start_date_can_be_at_least_one_year, :finish_date_cannot_be_less_than_start_date,
   :period_can_be_at_least_ten_days
 
+  delegate :name, to: :employee, prefix: :employee
+
   def start_date_can_be_at_least_one_year
-    errors.add(:start_date, "can be at least one year later of admission_date") if employee_id && 
+    errors.add(:start_date, "can be at least one year later of admission_date") if employee_id && self.start_date && self.finish_date &&
                                                                                    self.start_date.year - 
                                                                                    self.employee.admission_date.year < 1
   end

@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    models:
+      employee:  Funcionário
+      employees: Funcionários
+      vacation: Férias
+      vacations: Férias
+
+    attributes:
+      employee:
+        name: Nome
+        position: Profissão
+        admission_date: Data de Admissão
+      vacation:
+        start_date: Data de Inicio
+        finish_date: Data de Encerramento
+        employee: Funcionário
+      

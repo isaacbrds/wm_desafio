@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" class="m-5"><%= notice %></p>
 
 <%= render @vacation %>
 
-<div>
-  <%= link_to "Edit this vacation", edit_vacation_path(@vacation) %> |
-  <%= link_to "Back to vacations", vacations_path %>
+<div class="m-5">
+  <%= link_to t("edit this vacation"), edit_vacation_path(@vacation) %> |
+  <%= link_to t("back to vacations"), vacations_path %>
 
-  <%= button_to "Destroy this vacation", @vacation, method: :delete %>
+  <%= button_to t("destroy this vacation"), @vacation, method: :delete, data: {confirm: "Você tem certeza?"} %>
 </div>
