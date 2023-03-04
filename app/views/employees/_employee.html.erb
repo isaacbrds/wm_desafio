@@ -1,17 +1,9 @@
-<div id="<%= dom_id employee %>">
-  <p>
-    <strong>Name:</strong>
-    <%= employee.name %>
-  </p>
 
-  <p>
-    <strong>Position:</strong>
-    <%= employee.position %>
-  </p>
-
-  <p>
-    <strong>Admission date:</strong>
-    <%= employee.admission_date %>
-  </p>
-
+<div class="card" style="width: 18rem;" id="<%= dom_id employee %>">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= employee.name %></h5>
+    <p class="card-text"><%= employee.position %></p>
+    <a href="#" class="btn btn-primary"><%= employee.admission_date %></a>
+  </div>
 </div>

@@ -11,22 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :start_date, style: "display: block" %>
-    <%= form.datetime_field :start_date %>
+  <div class="form-group">
+    <%= form.datetime_field :start_date, 
+        placeholder: "Start date", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.datetime_field :finish_date, 
+    placeholder: "Finish date", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.collection_select :employee_id, @employees, :id, :name , class: "form-select form-select-lg mb-3" %>
   </div>
 
   <div>
-    <%= form.label :finish_date, style: "display: block" %>
-    <%= form.datetime_field :finish_date %>
-  </div>
-
-  <div>
-    <%= form.label :employee_id, style: "display: block" %>
-    <%= form.text_field :employee_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Send", class: 'btn btn-primary mt-3'%>
   </div>
 <% end %>

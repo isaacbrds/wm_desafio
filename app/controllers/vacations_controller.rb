@@ -1,5 +1,6 @@
 class VacationsController < ApplicationController
   before_action :set_vacation, only: %i[ show edit update destroy ]
+  before_action :set_employees, only: %i[ new edit create update ]
   def index
     @vacations = Vacation.all
   end
@@ -40,6 +41,10 @@ class VacationsController < ApplicationController
     
   def set_vacation
     @vacation = Vacation.find(params[:id])
+  end
+
+  def set_employees
+    @employees = Employee.all
   end
 
   def vacation_params

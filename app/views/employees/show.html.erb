@@ -2,9 +2,11 @@
 
 <%= render @employee %>
 
-<div>
+<div class="mt-5">
   <%= link_to "Edit this employee", edit_employee_path(@employee) %> |
-  <%= link_to "Back to employees", employees_path %>
+  <%= link_to "Back to employees", employees_path %> |
+  <%= link_to "Go to employee's vacations", vacation_path(@employee.vacations) %>
 
-  <%= button_to "Destroy this employee", @employee, method: :delete %>
+  <%= button_to "Destroy this employee", @employee, method: :delete, class: "mt-3" %>
 </div>
+
