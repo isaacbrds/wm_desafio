@@ -7,7 +7,7 @@
     <th><%= t 'activerecord.attributes.employee.name' %></th>
     <th><%= t 'activerecord.attributes.employee.position' %></th>
     <th><%= t 'activerecord.attributes.employee.admission_date' %></th>
-    <th>Actions</th>
+    <th><%= t 'menu.actions' %></th>
   </thead>  
   <tbody>
     <% @employees.each do |employee| %>
@@ -19,7 +19,7 @@
         <%= employee.position %>
       </td>
       <td>
-        <%= employee.admission_date %>
+        <%= date_to_str(employee.admission_date) %>
       </td>
       <td > 
         <%= link_to t('edit'), edit_employee_path(employee), class: 'btn btn-warning' %>

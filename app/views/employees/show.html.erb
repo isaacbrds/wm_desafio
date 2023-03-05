@@ -10,6 +10,6 @@
     <%= link_to t("go to employee's vacations"), vacation_path(@employee.vacations) %>
   <% end %>
 
-  <%= button_to t("destroy this employee"), @employee, method: :delete, class: "mt-3" %>
+  <%= button_to t("destroy this employee"), @employee, method: :delete, data: { confirm: 'Você está certo disso ?' }, class: 'btn btn-danger mt-3'  %>
 </div>
 

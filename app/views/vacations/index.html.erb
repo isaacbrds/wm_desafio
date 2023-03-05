@@ -6,15 +6,15 @@
     <th><%= t 'activerecord.attributes.vacation.start_date' %></th>
     <th><%= t 'activerecord.attributes.vacation.finish_date' %></th>
     <th><%= t 'activerecord.attributes.vacation.employee' %></th>
-    <th>Actions</th>
+    <th><%= t 'menu.actions' %></th>
   </thead>  
   <tbody>
     <% @vacations.each do |vacation| %>
     <td>
-      <%= vacation.start_date %>
+      <%= date_to_str(vacation.start_date) %>
     </td>
     <td>
-      <%= vacation.finish_date %>
+      <%= date_to_str(vacation.finish_date) %>
     </td>
     <td>
       <%= vacation.employee_name %>
