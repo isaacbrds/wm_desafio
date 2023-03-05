@@ -37,7 +37,7 @@
 
 <br/>
 
-# How to execute this project
+# Como executar esse projeto
 
 
 ```bash
@@ -61,7 +61,7 @@ yarn
 
 ```
 
-# How to test this project
+# Como testar esse projeto
 
 ```bash 
 
