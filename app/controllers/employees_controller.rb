@@ -1,7 +1,11 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[ show edit update destroy ]
   def index
-    @employees = Employee.all
+    @employees = Employee.order(:name).page
+
+    term = params[:term]
+    
+    @employees = Employee.where("name LIKE ?", "%#{term}%").distinct.order(:name).page  if term.present?
   end
 
   def show;end

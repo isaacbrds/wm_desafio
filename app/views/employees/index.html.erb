@@ -2,6 +2,8 @@
 
 <h1 class="m-5 d-flex aligns-items-center justify-content-center "><%= t 'activerecord.models.employees' %></h1>
 
+<%= link_to t("new employee"), new_employee_path, class: 'col-3 btn btn-primary d-flex aligns-items-center justify-content-center m-3 ' %>
+
 <table class="table">
   <thead>
     <th><%= t 'activerecord.attributes.employee.name' %></th>
@@ -36,6 +38,9 @@
   
   </tbody>
 </table>
+<div class="d-flex aligns-items-center justify-content-center m-5">
+  <%= paginate @employees %>
+</div>
 
 
-<%= link_to t("new employee"), new_employee_path %>
+
