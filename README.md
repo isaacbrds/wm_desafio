@@ -57,7 +57,8 @@ rails db:create db:migrate
 # Install JS libs
 yarn
 
-
+# Execute
+bin/dev
 
 ```
 
