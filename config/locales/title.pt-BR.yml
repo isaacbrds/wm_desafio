@@ -9,8 +9,9 @@ pt-BR:
   vacations: Férias
   vacation: Férias
   new vacation: Novas Férias
-  show this vacation: Mostar Férias
-  edit this vacation: Editar Férias
+  show this vacation: Mostar Férias desse Funcionário
+  edit this vacation: Editar Férias desse Funcionário
+  edit vacation: Editar Férias
   back to vacations: Voltar para listagem de Férias
   go to employee's vacations: Ir para listagem de Férias desse Funcionário
   destroy this vacation: Excluir esse periódo de Férias

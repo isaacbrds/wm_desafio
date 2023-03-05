@@ -3,16 +3,20 @@ class Vacation < ApplicationRecord
   belongs_to :employee
 
   validate :start_date_can_be_at_least_one_year, :finish_date_cannot_be_less_than_start_date,
-  :period_can_be_at_least_ten_days
+  :period_can_be_at_least_ten_days, :periods_cannot_be_overlapping
 
   delegate :name, to: :employee, prefix: :employee
 
   paginates_per 5
 
+  def employee_exists?
+    true if self.employee_id
+  end
+
   def start_date_can_be_at_least_one_year
     errors.add(:start_date, "can be at least one year later of admission_date") if employee_id && self.start_date && self.finish_date &&
                                                                                    self.start_date.year - 
-                                                                                   self.employee.admission_date.year < 1
+                                                                   self.employee.admission_date.year < 1
   end
 
   def finish_date_cannot_be_less_than_start_date
@@ -29,5 +33,13 @@ class Vacation < ApplicationRecord
   def period_can_be_a_max_of_thirty_days
     days = (self.finish_date.to_i - self.start_date.to_i)
     errors.add(:finish_date, "finish date can be a max of thirty days of start date ") if (days)/86400 >= 30
+  end
+
+  def periods_cannot_be_overlapping 
+    if self.employee_id 
+      self.employee.vacations.each do | vacation |
+        errors.add(:start_date, "periods cannot be overlapping for this employee") if vacation.start_date == self.start_date
+      end
+    end
   end
 end
