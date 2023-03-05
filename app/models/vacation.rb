@@ -9,10 +9,6 @@ class Vacation < ApplicationRecord
 
   paginates_per 5
 
-  def employee_exists?
-    true if self.employee_id
-  end
-
   def start_date_can_be_at_least_one_year
     errors.add(:start_date, "can be at least one year later of admission_date") if employee_id && self.start_date && self.finish_date &&
                                                                                    self.start_date.year - 
