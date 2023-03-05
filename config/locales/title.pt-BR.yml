@@ -20,6 +20,7 @@ pt-BR:
   editing employee: Editando Funcionário
   back to employees: Voltar para listagem de funcionários
   destroy this employee: Deletar esse Funcionário
+  actions: Ações
   logout: Deslogar
   thumbnail: Imagem
   back: Voltar
@@ -31,10 +32,11 @@ pt-BR:
   Forgot your password?: Esqueci a senha
   characters minimum: caracteres no mínimo
   you don't have permission to edit this: Você não tem permissão para editar isso
-  post was successfully updated!: O post foi atualizado com sucesso
-  post was successfully detroyed!: O post foi destruído com sucesso
-  post was successfully created!: O post foi criado com sucesso
-  post was successfully imported!: O post foi importado com sucesso
-  post was not successfully imported!: O post não foi importado com sucesso
+  vaction was successfully updated!: As férias foram atualizado com sucesso
+  vaction was successfully detroyed!: As férias foram destruído com sucesso
+  vaction was successfully created!: As férias foram criado com sucesso
+  employee was successfully updated!: O funcionário foi atualizado com sucesso
+  employee was successfully detroyed!: O funcionário foi destruído com sucesso
+  employee was successfully created!: O funcionário foi criado com sucesso
   remember_me: lembrar
   send: Enviar

@@ -6,5 +6,5 @@
   <%= link_to t("edit this vacation"), edit_vacation_path(@vacation) %> |
   <%= link_to t("back to vacations"), vacations_path %>
 
-  <%= button_to t("destroy this vacation"), @vacation, method: :delete, data: {confirm: "Você tem certeza?"} %>
+  <%= button_to t("destroy this vacation"), @vacation, method: :delete, data: { confirm: 'Você está certo disso ?' }, class: 'btn btn-danger' %>
 </div>

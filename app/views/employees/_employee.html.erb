@@ -4,6 +4,6 @@
   <div class="card-body">
     <h5 class="card-title"><%= employee.name %></h5>
     <p class="card-text"><%= employee.position %></p>
-    <strong><%= t 'activerecord.attributes.employee.admission_date' %>: </strong><a href="#" class="btn btn-primary"><%= employee.admission_date %></a>
+    <strong><%= t 'activerecord.attributes.employee.admission_date' %>: </strong><a href="#" class="btn btn-primary"><%= date_to_str(employee.admission_date) %></a>
   </div>
 </div>

@@ -3,7 +3,7 @@
     <div class="card-body">
       <h5 class="card-title"><strong><%= t 'activerecord.attributes.employee.name' %>: </strong><%= @vacation.employee.name %></h5>
       <p class="card-text d-flex justify-content-center "><strong><%= t "vacation" %></strong></p>
-      <strong><%= t 'activerecord.attributes.vacation.start_date' %>: </strong><br/><a href="#" class="btn btn-primary"><%= @vacation.start_date %></a><br/>
-      <strong><%= t 'activerecord.attributes.vacation.finish_date' %>: </strong><br/><a href="#" class="btn btn-danger"><%= @vacation.finish_date %></a>
+      <strong><%= t 'activerecord.attributes.vacation.start_date' %>: </strong><br/><a href="#" class="btn btn-primary"><%= date_to_str(@vacation.start_date) %></a><br/>
+      <strong><%= t 'activerecord.attributes.vacation.finish_date' %>: </strong><br/><a href="#" class="btn btn-danger"><%= date_to_str(vacation.finish_date) %></a>
     </div>
   </div>
