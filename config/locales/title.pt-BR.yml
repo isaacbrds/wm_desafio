@@ -40,3 +40,5 @@ pt-BR:
   employee was successfully created!: O funcionário foi criado com sucesso
   remember_me: lembrar
   send: Enviar
+  pagination:
+    next: próxima

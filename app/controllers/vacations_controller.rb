@@ -2,7 +2,7 @@ class VacationsController < ApplicationController
   before_action :set_vacation, only: %i[ show edit update destroy ]
   before_action :set_employees, only: %i[ new edit create update ]
   def index
-    @vacations = Vacation.all
+    @vacations = Vacation.order(:start_date).page
   end
 
   def show;end

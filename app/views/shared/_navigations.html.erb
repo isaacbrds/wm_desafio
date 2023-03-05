@@ -11,10 +11,13 @@
               <%= link_to t("vacations"), vacations_path, class: "nav-link" %>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-4" type="search" placeholder="Digite termo de busca" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit"><%= t 'menu.search' %></button>
-          </form>
+          <%= form_tag(employees_path, method: :get) do %>
+          <div class="form-control me-4 d-flex bg-dark">
+            <span style="color:white"> Digite o nome <br/> do funcionário:  </span>
+              <%= text_field_tag(:term) %>
+              <%= submit_tag t("menu.search"),  class: "btn btn-outline-success" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </nav>
