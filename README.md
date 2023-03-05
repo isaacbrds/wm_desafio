@@ -36,3 +36,40 @@
   ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-333333?style=flat&logo=visual-studio-code&logoColor=007ACC)
 
 <br/>
+
+# How to execute this project
+
+
+```bash
+# clone repository
+git clone https://github.com/isaacbrds/wm_desafio.git
+
+# access the folder
+cd wm_desafio
+
+# Install gems
+
+bundle install
+
+# Create a database
+rails db:create db:migrate 
+
+# Install JS libs
+yarn
+
+
+
+```
+
+# How to test this project
+
+```bash 
+
+# Run rspec 
+
+rspec
+
+```
+# Autor
+
+Isaac Brígido Rodrigues dos Santos
